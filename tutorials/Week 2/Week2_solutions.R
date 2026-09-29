@@ -25,7 +25,7 @@ lapply(c("readr", "ggplot2", "dplyr", "viridis"),  pkgTest)
 getwd()
 
 # Set wd for current folder
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+setwd("/Users/anouschkaverdon/Desktop/StatsI_2026/tutorials/Week 2")
 
 # -------------------------------#
 # 2. Load & Inspect Data
@@ -93,6 +93,21 @@ se_edu
 # -------------------------------#
 
 # Create histogram of income with mean line
+
+hist(mean_income)
+income_data <- rbind(mean_income, median_income, var_income, sd_income)
+income.df <- as.data.frame(income_data)
+
+ggplot(df_income, aes(x = mean, fill = n)) +
+  geom_histogram(bins = 30, alpha = 0.6, position = "identity") +
+  facet_wrap(~ n, scales = "free") +
+  lims(x=c(1700, 2000)) + 
+  geom_vline(xintercept = mean_income, color = "red", linetype = "dashed") +
+  labs(title = "Mean Income",
+       x = "Mean Income", y = "Count") +
+  theme_minimal() + guides(fill="none")
+
+
 
 # Create histogram of education with mean line
 
