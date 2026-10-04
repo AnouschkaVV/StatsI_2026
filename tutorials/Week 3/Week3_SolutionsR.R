@@ -22,7 +22,7 @@ pkgTest <- function(pkg){
 lapply(c("readr", "ggplot2", "dplyr", "viridis", "foreign", "haven"),  pkgTest)
 
 # Set wd for current folder
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+setwd("/Users/anouschkaverdon/Desktop/StatsI_2026/tutorials/Week 3")
 
 # Agenda
 # (a.) Descriptive analysis
@@ -64,8 +64,24 @@ summary(df)
 # -------------------------------#
 
 # Create a histogram of income
+hist(df$income,
+     #breaks = 20,
+     main = "Monthly net income",
+     xlab = "Euro",
+     col = "hotpink")
 
 # Create a density plot of income
+#first method
+plot(density(df$income),
+     main = "Monthly net income",
+     xlab = "Euro")
+
+#second method
+ggplot(df, aes(x = income)) +
+  geom_density(fill = "hotpink", color = "hotpink", alpha = 0.5) +
+  theme_minimal() +
+  labs(title = "Monthly net income", x = "Euro")
+
 
 # -----------------------------------------#
 # 4. Sampling Distribution & Standard Error
@@ -81,7 +97,24 @@ summary(df)
 # Definition: Point estimate +/- Margin of error, 
 # where margin of error is a multiple of the standard error
 
+#find standard error
+s <- sd(df$income, na.rm = TRUE)
+
+n <- length(na.omit(df$income))
+
+se_income <- s/sqrt(n)
+print(se_income)
+
 # Calculate the lower and upper CI
+lower_95_n <- qnorm(0.025,
+                    mean = mean(df$income),
+                    sd = se_income)
+
+upper_95_n <- qnorm(0.975,
+                    mean = mean(df$income),
+                    sd = se_income)
+lower_95_n
+upper_95_n
 
 # Let's talk about qnorm()
 ?qnorm
@@ -100,7 +133,23 @@ qt(0.005, df=length(df$income)-1, lower.tail=FALSE) # last 0.5%
 t_score <- qt(0.995, df = length(df$income) - 1)
 
 # Re-calculate 99% CI around mean_income
+#calculate mean
+mean_income <- mean(df$income, na.rm = TRUE)
 
+#get dgrees of freedom
+n <- sum(!is.na(df$income))
+df_degrees <- n-1
+
+#find critical t-value
+t_critical_99 <- qt(0.995, df = df_degrees)
+
+lower_99_t <- mean_income - (t_critical_99 * se)
+
+upper_99_t <- mean_income + (t_critical_99 * se)
+
+lower_99_t
+mean_income
+upper_99_t
 # -------------------------------#
 # 6. Significance Tests
 # -------------------------------#
@@ -117,11 +166,18 @@ t_score <- qt(0.995, df = length(df$income) - 1)
 # different from the population mean in Ireland (from Google: 3034)?
 
 # Hypotheses: Should our test be one or two-sided? 
+#ANSWER: should be two-sided
+#H0: Average monthly income is 3034 (mu is equal to 3034)
+#H1: Average monthly income is not 3034 (mu != 3034)
+
+?t.test
 
 # Conduct appropriate test (using built-in R function)
+t.test(df$income, mu = 3034)
+t.test(df$income, mu = 3034, alternative = "less")
 
 # What is our conclusion?
-
+t.test(df$income, conf.level = 0.99, alternative = "two.sided")
 
 # ---------------------------------------------#
 # Question:
