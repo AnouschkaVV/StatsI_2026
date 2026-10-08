@@ -25,7 +25,7 @@ lapply(c("readr", "ggplot2", "dplyr", "viridis", "foreign"),  pkgTest)
 getwd()
 
 # Set wd for current folder
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+setwd("/Users/anouschkaverdon/Desktop/StatsI_2026/tutorials/Week 4")
 
 # Agenda
 # (0.0) Data-wrangling 
@@ -49,6 +49,7 @@ summary(df_not_tidy)
 
 # Research question:
 # Do different genres receive different critical appreciation?
+
 
 # Load the tidy version of the data
 # (Prepared using the data_wrangling.R script)
@@ -184,6 +185,17 @@ round(0.72413793, 2)
 # What is the probability of each GENRE given that a movie 
 # has a certain CRITICS RATING? (e.g., Rotten)?
 
+prop.table(table(df_s$genre,           # rows
+                 df_s$critics_rating), # columns
+           margin = 2) # over rows
+
+round(addmargins(prop.table(table(df_s$genre, 
+                                  df_s$critics_rating), 
+                            margin = 2)), 2)
+
+# To get rid of the Sum-Sum row-column pair:
+round(prop.table(table(df_s$genre, df_s$critics_rating), margin = 2), 2)
+
 # Reminder: 
 # prop.table(x, margin = 1): proportions across rows (conditional on row)
 # prop.table(x, margin = 2): proportions across columns (conditional on column)
@@ -192,8 +204,8 @@ round(0.72413793, 2)
 # Over columns --> Genre conditional on critics rating
 addmargins(prop.table(table(# your answer here,           #row
                             # your answer here), # column
-                      margin = 2)) 
-                      
+                      margin = 2)))
+           
 # - manual check for 'comedy' given 'rotten' : which values do we use?                       
 # your answer here
 
@@ -313,4 +325,4 @@ plot(df$edu, df$income,
 
 # Fit and add regression line
 fit <- lm(income ~ edu, data = df)
-abline(fit, col = "red", lwd = 2)
+abline(fit, col = "hotpink", lwd = 2)

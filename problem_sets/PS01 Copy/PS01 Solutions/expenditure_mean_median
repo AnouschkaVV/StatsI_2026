@@ -1,0 +1,29 @@
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: Thu, Oct 08, 2026 - 14:09:19
+\begin{table}[!htbp] \centering 
+  \caption{Mean and median expenditure by Region} 
+  \label{tab:region_expenditure} 
+\begin{tabular}{@{\extracolsep{5pt}} ccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+North Central & $83.9$ & $83$ \\ 
+Northeast & $79.4$ & $72$ \\ 
+South & $69.2$ & $67$ \\ 
+West & $88.3$ & $87$ \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: Thu, Oct 08, 2026 - 14:09:19
+\begin{table}[!htbp] \centering 
+  \caption{Mean and median expenditure by Region} 
+  \label{tab:region_expenditure} 
+\begin{tabular}{@{\extracolsep{5pt}} c} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+FALSE \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
