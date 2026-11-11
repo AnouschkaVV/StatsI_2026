@@ -134,35 +134,35 @@ model1_cont <- # your answer here
 summary(model1_cont)
 
 # Categorical measure of education
-model1_cat <- # your answer here
+model1_cat <- lm(euftf_re ~ edu_cat, data = df_IRE)
 summary(model1_cat)
 
 # Change reference category and re-estimate
 plot(df_IRE$edu_cat)
 df_IRE$edu_cat <- relevel(df_IRE$edu_cat, ref = 2)
 
-model1_cat <- # your answer here
+model1_cat <-  lm(euftf_re ~ edu_cat, data = df_IRE)
 summary(model1_cat)
 
 # -----------------------------------------------------------
 # (2) Hypothesis 2: Income and Euroscepticism
 # Expectation: Higher income --> Lower Euroscepticism
 # -----------------------------------------------------------
-model2 <- # your answer here
+model2 <-  lm(euftf_re ~ hinctnta, data = df_IRE)
 summary(model2)
 
 # -----------------------------------------------------------
 # (3) Hypothesis 3: Political Trust and Euroscepticism
 # Expectation: Higher trust --> Lower Euroscepticism
 # -----------------------------------------------------------
-model3 <- # your answer here
+model3 <-  lm(euftf_re ~ trstplt, data = df_IRE)
 summary(model3)
 
 # -----------------------------------------------------------
 # (4) Hypothesis 4: Immigration Attitudes and Euroscepticism
 # Expectation: More positive view of immigrants --> Lower Euroscepticism
 # -----------------------------------------------------------
-model4 <- # your answer here
+model4 <-  lm(euftf_re ~ imwbcnt, data = df_IRE)
 summary(model4)
 
 # -----------------------------------------------------------
@@ -170,31 +170,33 @@ summary(model4)
 # -----------------------------------------------------------
 
 # Education only
-model1 <- # your answer here
+model1 <-  lm(euftf_re ~ edlvdie, data = df_IRE)
 summary(model1)
 
 # Add economic dimension
-model_eco <- # your answer here
+model_eco <-lm(euftf_re ~ edlvdie + hinctnta, data = df_IRE)
 summary(model_eco)
 
 # Add political dimension
-model_pol <- # your answer here
+model_pol <- lm(euftf_re ~ edlvdie + hinctnta + trstplt, data = df_IRE)
 summary(model_pol)
 
 # Add cultural dimension
-model_cul <- # your answer here
+model_cul <- lm(euftf_re ~ edlvdie + hinctnta + trstplt + imwbcnt, data = df_IRE)
 summary(model_cul)
 
 # Add socio-demographic controls
-model_final <- # your answer here
+model_final <- lm(euftf_re ~ edlvdie + hinctnta + trstplt + imwbcnt + gndr, data = df_IRE)
 summary(model_final)
 
 # Get Latex table
 stargazer(model1,model_eco,model_pol,model_cul,model_final)
 
 # How to visualize results?
+library(coefplot)
+
 coefplot(model_final)
-coefplot(model1, add=TRUE, col.pts="gray")
+coefplot(model1, add=TRUE, col.pts="hotpink")
 
 # And using the coefplot library
 coefplot::multiplot(
