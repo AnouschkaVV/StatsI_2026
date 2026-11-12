@@ -60,7 +60,7 @@ ggplot(inc.sub, aes(x = difflog, y = voteshare)) +
   geom_smooth(method = "lm", se = FALSE, color = "hotpink") + #line of best fit
   labs(
     title = "Relationship between campaign spending and incumbent vote share",
-    x = "Difference in campaign spending",
+    x = "Log difference in campaign spending",
     y = "Incumbent vote share"
   )
 
@@ -68,7 +68,7 @@ dev.off()
 
 #c) Save the residuals of the model in a separate object.
 residuals_1 <- residuals(regression_1)
-head(residuals_1)
+summary(residuals_1)
 
 #d) Write the prediction equation.
 
@@ -94,16 +94,16 @@ ggplot(inc.sub, aes(x = difflog, y = presvote)) +
   theme_classic() +
   geom_smooth(method = "lm", se = FALSE, color = "hotpink") + #line of best fit
   labs(
-    title = "Relationship between campaign spending and president votes",
-    x = "Difference in campaign spending",
-    y = "President votes"
+    title = "Relationship between campaign spending and presidential vote share",
+    x = "Log difference in campaign spending",
+    y = "Presidential vote share"
   )
 
 dev.off() 
 
 #c) Save the residuals of the model in a separate object.
 residuals_2 <- residuals(regression_2)
-head(residuals_2)
+summary(residuals_2)
 
 #d) Write the prediction equation.
 
@@ -130,8 +130,8 @@ ggplot(inc.sub, aes(x = presvote, y = voteshare)) +
   theme_classic() +
   geom_smooth(method = "lm", se = FALSE, color = "hotpink") + #line of best fit
   labs(
-    title = "Relationship between incumbent vote share and president votes",
-    x = "President votes",
+    title = "Relationship between incumbent vote share and presidential vote share",
+    x = "Presidential vote share",
     y = "Incumbent vote share"
   )
 

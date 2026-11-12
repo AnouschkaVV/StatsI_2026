@@ -86,11 +86,29 @@
 	\begin{enumerate}
 		\item \textbf{Run a regression where the outcome variable is \texttt{voteshare} and the explanatory variable is \texttt{difflog}.}	\vspace{0cm}
 		
-		I used the built-in R function \texttt{lm()} to run the regression for Question $1$, using \texttt{voteshare} as the outcome (Y) variable and \texttt{difflog} as the explanatory (X) variable, where \texttt{voteshare} is the incumbent's proportion of the vote and \texttt{difflog} is the log difference in campaign spending between the incumbent and the challenger. 
+		I used the built-in R function \texttt{lm()} to run the regression for Question $1$, using \texttt{voteshare} as the outcome (Y) variable and \texttt{difflog} as the explanatory (X) variable, where \texttt{voteshare} is the incumbent's proportion of the vote and \texttt{difflog} is the log difference in campaign spending between the incumbent and the challenger. I estimated that the y-intercept is $0.57903$ and $\hat{\beta}$ is $0.04167$. This means that when \texttt{difflog} is equal to 0, the predicted \texttt{voteshare} value is $0.58$ (rounded to $2$ d.p.). Furthermore, for every one unit increase in the \texttt{difflog}, there is a $0.04$ (rounded to $2$ d.p.) expected increase in \texttt{voteshare}.
 		
 		\lstinputlisting[language=R, firstline=51, lastline=52]{PS03_Solutions_AV.R} 
 		
-		I estimated that the y-intercept is $0.57903$ and $\hat{\beta}$ is $0.04167$. This means that when \texttt{difflog} is equal to 0, the predicted \texttt{voteshare} value is $0.58$ (rounded to $2$ d.p.). Furthermore, for every one unit increase in the \texttt{difflog}, there is a $0.04$ (rounded to $2$ d.p.) expected increase in \texttt{voteshare}.
+		\begin{verbatim}
+			Call:
+			lm(formula = inc.sub$voteshare ~ inc.sub$difflog)
+			
+			Residuals:
+			Min       1Q   Median       3Q      Max 
+			-0.26832 -0.05345 -0.00377  0.04780  0.32749 
+			
+			Coefficients:
+			Estimate Std. Error t value Pr(>|t|)    
+			(Intercept)     0.579031   0.002251  257.19   <2e-16 ***
+			inc.sub$difflog 0.041666   0.000968   43.04   <2e-16 ***
+			---
+			Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+			
+			Residual standard error: 0.07867 on 3191 degrees of freedom
+			Multiple R-squared:  0.3673,	Adjusted R-squared:  0.3671 
+			F-statistic:  1853 on 1 and 3191 DF,  p-value: < 2.2e-16
+		\end{verbatim}
 		
 		\item \textbf{Make a scatterplot of the two variables and add the regression line.} 	\vspace{0cm}
 		
@@ -105,7 +123,7 @@
 		
 		\item \textbf{Save the residuals of the model in a separate object.}	\vspace{0cm}
 		
-		Residuals are the difference between the observed \texttt{voteshare} and the \texttt{voteshare} predicted by the regression model. I used the built-in R function \texttt{residuals()} to calculate the residuals from the regression values I estimated in the first part of Question $1$. I stored the residuals in a new vector called \texttt{residuals\_1}.
+		Residuals are the difference between the observed \texttt{voteshare} and the \texttt{voteshare} predicted by the regression model. These residuals represent the unexplained variation of \texttt{voteshare} -- that is, variation in \texttt{voteshare} that is not explained by the log difference in spending between incumbent and challenger (\texttt{difflog}). I used the built-in R function \texttt{residuals()} to calculate the residuals from the regression values I estimated in the first part of Question $1$. I stored the residuals in a new vector called \texttt{residuals\_1}.
 		
 		\lstinputlisting[language=R, firstline=70, lastline=71]{PS03_Solutions_AV.R}  
 		
@@ -124,11 +142,29 @@
 	\begin{enumerate}
 		\item \textbf{Run a regression where the outcome variable is \texttt{presvote} and the explanatory variable is \texttt{difflog}.}	\vspace{0cm}
 		
-		I used the built-in R function \texttt{lm()} to run the regression for Question $2$, using \texttt{presvote} as the outcome (Y) variable and \texttt{difflog} as the explanatory (X) variable, where \texttt{presvote} is the voteshare of the presidential candidate from the incumbent party and \texttt{difflog} is the log difference in campaign spending between the incumbent and the challenger. 
+		I used the built-in R function \texttt{lm()} to run the regression for Question $2$, using \texttt{presvote} as the outcome (Y) variable and \texttt{difflog} as the explanatory (X) variable, where \texttt{presvote} is the voteshare of the presidential candidate from the incumbent party and \texttt{difflog} is the log difference in campaign spending between the incumbent and the challenger. I estimated that the y-intercept is $0.50758$ and $\hat{\beta}$ is $0.02384$. This means that when \texttt{difflog} is equal to 0, the predicted \texttt{presvote} value is $0.51$ (rounded to $2$ d.p.). Furthermore, for every one unit increase in the \texttt{difflog}, there is a $0.02$ (rounded to $2$ d.p.) expected increase in \texttt{presvote}.
 		
 		\lstinputlisting[language=R, firstline=86, lastline=87]{PS03_Solutions_AV.R}  
 		
-		I estimated that the y-intercept is $0.50758$ and $\hat{\beta}$ is $0.02384$. This means that when \texttt{difflog} is equal to 0, the predicted \texttt{presvote} value is $0.51$ (rounded to $2$ d.p.). Furthermore, for every one unit increase in the \texttt{difflog}, there is a $0.02$ (rounded to $2$ d.p.) expected increase in \texttt{presvote}.
+		\begin{verbatim}
+			Call:
+			lm(formula = inc.sub$presvote ~ inc.sub$difflog)
+			
+			Residuals:
+			Min       1Q   Median       3Q      Max 
+			-0.32196 -0.07407 -0.00102  0.07151  0.42743 
+			
+			Coefficients:
+			Estimate Std. Error t value Pr(>|t|)    
+			(Intercept)     0.507583   0.003161  160.60   <2e-16 ***
+			inc.sub$difflog 0.023837   0.001359   17.54   <2e-16 ***
+			---
+			Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+			
+			Residual standard error: 0.1104 on 3191 degrees of freedom
+			Multiple R-squared:  0.08795,	Adjusted R-squared:  0.08767 
+			F-statistic: 307.7 on 1 and 3191 DF,  p-value: < 2.2e-16
+		\end{verbatim}
 		
 		\item \textbf{Make a scatterplot of the two variables and add the regression line.} 	\vspace{0cm}
 		
@@ -143,7 +179,7 @@
 		
 		\item \textbf{Save the residuals of the model in a separate object.}	\vspace{0cm}
 		
-		Residuals are the difference between the observed \texttt{presvote} and the \texttt{presvote} predicted by the regression model. As in Question 1, I used the built-in R function \texttt{residuals()} and stored the residuals in a new vector called \texttt{residuals\_2}.
+		Residuals are the difference between the observed \texttt{presvote} and the \texttt{presvote} predicted by the regression model. These residuals represent the unexplained variation in \texttt{presvote} -- that is, variation in \texttt{presvote} that is not explained by the log difference in spending between incumbent and challenger in the district (\texttt{difflog}). As in Question 1, I used the built-in R function \texttt{residuals()} and stored the residuals in a new vector called \texttt{residuals\_2}.
 		
 		\lstinputlisting[language=R, firstline=105, lastline=106]{PS03_Solutions_AV.R}  
 		
@@ -164,11 +200,29 @@
 		\item \textbf{Run a regression where the outcome variable is \texttt{voteshare} and the explanatory variable is \texttt{presvote}.}
 			\vspace{0cm}
 			
-			I used the built-in R function \texttt{lm()} to run the regression for Question $3$, using \texttt{voteshare} as the outcome (Y) variable and \texttt{presvote} as the explanatory (X) variable, where \texttt{voteshare} is the incumbent's proportion of the vote and \texttt{presvote} is the voteshare of the presidential candidate from the incumbent party.
+			I used the built-in R function \texttt{lm()} to run the regression for Question $3$, using \texttt{voteshare} as the outcome (Y) variable and \texttt{presvote} as the explanatory (X) variable, where \texttt{voteshare} is the incumbent's proportion of the vote and \texttt{presvote} is the voteshare of the presidential candidate from the incumbent party. I estimated that the y-intercept is $0.4413$ and $\hat{\beta}$ is $0.3880$. This means that when \texttt{presvote} is equal to 0, the predicted \texttt{voteshare} value is $0.44$ (rounded to $2$ d.p.). Furthermore, for every one unit increase in the \texttt{presvote}, there is a $0.39$ (rounded to $2$ d.p.) expected increase in \texttt{voteshare}.
 			
-			\lstinputlisting[language=R, firstline=122, lastline=123]{PS03_Solutions_AV.R}  
+			\lstinputlisting[language=R, firstline=122, lastline=123]{PS03_Solutions_AV.R} 
 			
-			I estimated that the y-intercept is $0.4413$ and $\hat{\beta}$ is $0.3880$. This means that when \texttt{presvote} is equal to 0, the predicted \texttt{voteshare} value is $0.44$ (rounded to $2$ d.p.). Furthermore, for every one unit increase in the \texttt{presvote}, there is a $0.39$ (rounded to $2$ d.p.) expected increase in \texttt{voteshare}.
+			\begin{verbatim}
+				Call:
+				lm(formula = inc.sub$voteshare ~ inc.sub$presvote)
+				
+				Residuals:
+				Min       1Q   Median       3Q      Max 
+				-0.27330 -0.05888  0.00394  0.06148  0.41365 
+				
+				Coefficients:
+				Estimate Std. Error t value Pr(>|t|)    
+				(Intercept)      0.441330   0.007599   58.08   <2e-16 ***
+				inc.sub$presvote 0.388018   0.013493   28.76   <2e-16 ***
+				---
+				Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+				
+				Residual standard error: 0.08815 on 3191 degrees of freedom
+				Multiple R-squared:  0.2058,	Adjusted R-squared:  0.2056 
+				F-statistic:   827 on 1 and 3191 DF,  p-value: < 2.2e-16
+			\end{verbatim}
 			
 		\item \textbf{Make a scatterplot of the two variables and add the regression line.} 
 			\vspace{0cm}
@@ -197,11 +251,29 @@
 	\begin{enumerate}
 		\item \textbf{Run a regression where the outcome variable is the residuals from Question 1 and the explanatory variable is the residuals from Question 2.}	\vspace{0cm}
 		
-		I used the built-in R function \texttt{lm()} to run the regression for Question $4$, using \texttt{residuals\_1} as the outcome (Y) variable and \texttt{residuals\_2} as the explanatory (X) variable, each calculated in the previous questions.
+		I used the built-in R function \texttt{lm()} to run the regression for Question $4$, using \texttt{residuals\_1} as the outcome (Y) variable and \texttt{residuals\_2} as the explanatory (X) variable, each calculated in the previous questions. I estimated that the y-intercept is $-4.860 \cdot 10^{-18}$ and $\hat{\beta}$ is $0.2569$. The y-intercept is an extremely small value, where $-4.860 \cdot 10^{-18}  \approx 0$. This means that when \texttt{residuals\_2} is equal to 0, the predicted \texttt{residuals\_1} value is also equal to $0$. This is because ordinary least squares (OLS) balances positive and negative errors (above and below the regression line), which means that the sum of residuals is always equal to $0$. Furthermore, for every one unit increase in the \texttt{residuals\_2}, there is a $0.26$ (rounded to $2$ d.p.) expected increase in \texttt{residuals\_1}.
 		
 		\lstinputlisting[language=R, firstline=156, lastline=157]{PS03_Solutions_AV.R}  
 		
-		I estimated that the y-intercept is $-4.860 \cdot 10^{-18}$ and $\hat{\beta}$ is $0.2569$. The y-intercept is an extremely small value, where $-4.860 \cdot 10^{-18}  \approx 0$. This means that when \texttt{residuals\_2} is equal to 0, the predicted \texttt{residuals\_1} value is also equal to $0$. This is because ordinary least squares (OLS) balances positive and negative errors (above and below the regression line), which means that the sum of residuals is always equal to $0$. Furthermore, for every one unit increase in the \texttt{residuals\_2}, there is a $0.26$ (rounded to $2$ d.p.) expected increase in \texttt{residuals\_1}.
+		\begin{verbatim}
+			Call:
+			lm(formula = residuals_1 ~ residuals_2)
+			
+			Residuals:
+			Min       1Q   Median       3Q      Max 
+			-0.25928 -0.04737 -0.00121  0.04618  0.33126 
+			
+			Coefficients:
+			Estimate Std. Error t value Pr(>|t|)    
+			(Intercept) -4.860e-18  1.299e-03    0.00        1    
+			residuals_2  2.569e-01  1.176e-02   21.84   <2e-16 ***
+			---
+			Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+			
+			Residual standard error: 0.07338 on 3191 degrees of freedom
+			Multiple R-squared:   0.13,	Adjusted R-squared:  0.1298 
+			F-statistic:   477 on 1 and 3191 DF,  p-value: < 2.2e-16
+		\end{verbatim}
 		
 		\item \textbf{Make a scatterplot of the two residuals and add the regression line.} 	\vspace{0cm}
 		
@@ -229,11 +301,30 @@
 	\begin{enumerate}
 		\item \textbf{Run a regression where the outcome variable is the incumbent's \texttt{voteshare} and the explanatory variables are \texttt{difflog} and \texttt{presvote}.}	\vspace{0cm}
 		
-		I used the built-in R function \texttt{lm()} to run the regression for Question $5$, using \texttt{voteshare} as the outcome (Y) variable and \texttt{difflog} as the first explanatory (X) variable, and \texttt{presvote} as the second explanatory (X) variable. Here, \texttt{voteshare} is the incumbent's proportion of the vote, whilst \texttt{difflog} is the log difference in campaign spending between the incumbent and the challenger, and \texttt{presvote} is the voteshare of the presidential candidate from the incumbent party.
+		I used the built-in R function \texttt{lm()} to run the regression for Question $5$, using \texttt{voteshare} as the outcome (Y) variable and \texttt{difflog} as the first explanatory (X) variable, and \texttt{presvote} as the second explanatory (X) variable. Here, \texttt{voteshare} is the incumbent's proportion of the vote, whilst \texttt{difflog} is the log difference in campaign spending between the incumbent and the challenger, and \texttt{presvote} is the voteshare of the presidential candidate from the incumbent party. I estimated that the y-intercept is $0.44864$, $\hat{\beta}_1$ is $0.03554$, and $\hat{\beta}_2$ is $0.25688$. This means that when both \texttt{difflog} and \texttt{presvote} are equal to 0, the predicted \texttt{voteshare} value is $0.45$ (rounded to $2$ d.p.). Furthermore, holding \texttt{presvote} constant, for every one unit increase in \texttt{difflog}, there is a $0.04$ (rounded to $2$ d.p.) expected increase in \texttt{voteshare}; and, holding \texttt{difflog} constant, for every one unit increase in \texttt{presvote}, there is a $0.26$ (rounded to $2$ d.p.) expected increase in \texttt{voteshare}.
 		
 		\lstinputlisting[language=R, firstline=188, lastline=189]{PS03_Solutions_AV.R}  
 		
-		I estimated that the y-intercept is $0.44864$, $\hat{\beta}_1$ is $0.03554$, and $\hat{\beta}_2$ is $0.25688$. This means that when both \texttt{difflog} and \texttt{presvote} are equal to 0, the predicted \texttt{voteshare} value is $0.45$ (rounded to $2$ d.p.). Furthermore, holding \texttt{presvote} constant, for every one unit increase in \texttt{difflog}, there is a $0.04$ (rounded to $2$ d.p.) expected increase in \texttt{voteshare}; and, holding \texttt{difflog} constant, for every one unit increase in \texttt{presvote}, there is a $0.26$ (rounded to $2$ d.p.) expected increase in \texttt{voteshare}.
+		\begin{verbatim}
+			Call:
+			lm(formula = inc.sub$voteshare ~ inc.sub$difflog + inc.sub$presvote)
+			
+			Residuals:
+			Min       1Q   Median       3Q      Max 
+			-0.25928 -0.04737 -0.00121  0.04618  0.33126 
+			
+			Coefficients:
+			Estimate Std. Error t value Pr(>|t|)    
+			(Intercept)      0.4486442  0.0063297   70.88   <2e-16 ***
+			inc.sub$difflog  0.0355431  0.0009455   37.59   <2e-16 ***
+			inc.sub$presvote 0.2568770  0.0117637   21.84   <2e-16 ***
+			---
+			Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+			
+			Residual standard error: 0.07339 on 3190 degrees of freedom
+			Multiple R-squared:  0.4496,	Adjusted R-squared:  0.4493 
+			F-statistic:  1303 on 2 and 3190 DF,  p-value: < 2.2e-16
+		\end{verbatim}
 		
 		\item \textbf{Write the prediction equation.}	\vspace{0cm}
 		
@@ -243,9 +334,7 @@
 		
 		\item \textbf{What is it in this output that is identical to the output in Question 4? Why do you think this is the case?}
 		
-		The $\hat{\beta}$ value in Question $4$ is identical to the $\hat{\beta}_2$ in Question $5$: $0.26$ (rounded to $2$ d.p.). The \texttt{residuals\_1} removes all variation in \texttt{voteshare} explained by \texttt{difflog}. Similarly, the \texttt{residuals\_2} removes all variation in \texttt{presvote} explained by \texttt{difflog}. The regression of these two residuals in Question $4$ thus purely measures the relationship between \texttt{voteshare} and \texttt{presvote}, holding \texttt{difflog} constant.
-		
-		The multi-variable regression I executed in Question $5$ automatically estimates the $\hat{\beta}$ value for \texttt{presvote} while holding \texttt{difflog} constant. As a result, the $\hat{\beta}$ in Question $4$ is identical to the $\hat{\beta}_2$ in Question $5$.
+		The $\hat{\beta}$ value in Question $4$ is identical to the $\hat{\beta}_2$ in Question $5$: $0.26$ (rounded to $2$ d.p.). The \texttt{residuals\_1} removes all variation in \texttt{voteshare} explained by \texttt{difflog}. Similarly, the \texttt{residuals\_2} removes all variation in \texttt{presvote} explained by \texttt{difflog}. The regression of these two residuals in Question $4$ thus purely measures the relationship between \texttt{voteshare} and \texttt{presvote}, holding \texttt{difflog} constant. The multi-variable regression I executed in Question $5$ automatically estimates the $\hat{\beta}$ value for \texttt{presvote} while holding \texttt{difflog} constant. As a result, the $\hat{\beta}$ in Question $4$ is identical to the $\hat{\beta}_2$ in Question $5$.
 		
 	\end{enumerate}
 

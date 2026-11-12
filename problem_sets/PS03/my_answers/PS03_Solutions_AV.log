@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.11)  11 NOV 2026 17:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.11)  12 NOV 2026 14:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -923,49 +923,50 @@ Solutions_AV.R)
 <P3_graph_1.pdf, id=25, 1011.78pt x 578.16pt>
 File: P3_graph_1.pdf Graphic file (type pdf)
 <use P3_graph_1.pdf>
-Package pdftex.def Info: P3_graph_1.pdf  used on input line 102.
+Package pdftex.def Info: P3_graph_1.pdf  used on input line 120.
 (pdftex.def)             Requested size: 446.26582pt x 255.00873pt.
- [2 <./P3_graph_1.pdf>] (./PS03_Solutions_AV.R) [3] (./PS03_Solutions_AV.R)
-(./PS03_Solutions_AV.R)
-<P3_graph_2.pdf, id=58, 1011.78pt x 578.16pt>
+ [2] (./PS03_Solutions_AV.R) [3 <./P3_graph_1.pdf>] (./PS03_Solutions_AV.R)
+[4] (./PS03_Solutions_AV.R)
+<P3_graph_2.pdf, id=67, 1011.78pt x 578.16pt>
 File: P3_graph_2.pdf Graphic file (type pdf)
 <use P3_graph_2.pdf>
-Package pdftex.def Info: P3_graph_2.pdf  used on input line 140.
+Package pdftex.def Info: P3_graph_2.pdf  used on input line 176.
 (pdftex.def)             Requested size: 446.26582pt x 255.00873pt.
- [4] (./PS03_Solutions_AV.R) [5 <./P3_graph_2.pdf>]
-Overfull \hbox (2.1085pt too wide) in paragraph at lines 167--168
+ [5 <./P3_graph_2.pdf>] (./PS03_Solutions_AV.R)
+[6]
+Overfull \hbox (2.1085pt too wide) in paragraph at lines 203--204
 []\OT1/cmr/m/n/12 I used the built-in R func-tion \OT1/cmtt/m/n/12 lm() \OT1/cm
 r/m/n/12 to run the re-gres-sion for Ques-tion $3$, us-ing \OT1/cmtt/m/n/12 vot
 eshare
  []
 
-(./PS03_Solutions_AV.R) (./PS03_Solutions_AV.R)
-<P3_graph_3.pdf, id=93, 1011.78pt x 578.16pt>
+(./PS03_Solutions_AV.R) (./PS03_Solutions_AV.R [7])
+<P3_graph_3.pdf, id=107, 1011.78pt x 578.16pt>
 File: P3_graph_3.pdf Graphic file (type pdf)
 <use P3_graph_3.pdf>
-Package pdftex.def Info: P3_graph_3.pdf  used on input line 181.
+Package pdftex.def Info: P3_graph_3.pdf  used on input line 235.
 (pdftex.def)             Requested size: 446.26582pt x 255.00873pt.
- [6] [7 <./P3_graph_3.pdf>]
-Overfull \hbox (12.7295pt too wide) in paragraph at lines 200--201
+ [8 <./P3_graph_3.pdf>]
+Overfull \hbox (12.7295pt too wide) in paragraph at lines 254--255
 []\OT1/cmr/m/n/12 I used the built-in R func-tion \OT1/cmtt/m/n/12 lm() \OT1/cm
 r/m/n/12 to run the re-gres-sion for Ques-tion $4$, us-ing \OT1/cmtt/m/n/12 res
 iduals[]1
  []
 
-(./PS03_Solutions_AV.R) (./PS03_Solutions_AV.R)
-<P3_graph_4.pdf, id=125, 1011.78pt x 578.16pt>
+(./PS03_Solutions_AV.R) [9] (./PS03_Solutions_AV.R)
+<P3_graph_4.pdf, id=141, 1011.78pt x 578.16pt>
 File: P3_graph_4.pdf Graphic file (type pdf)
 <use P3_graph_4.pdf>
-Package pdftex.def Info: P3_graph_4.pdf  used on input line 213.
+Package pdftex.def Info: P3_graph_4.pdf  used on input line 285.
 (pdftex.def)             Requested size: 446.26582pt x 255.00873pt.
- [8] [9 <./P3_graph_4.pdf>]
-Overfull \hbox (2.1085pt too wide) in paragraph at lines 232--233
+ [10 <./P3_graph_4.pdf>]
+Overfull \hbox (2.1085pt too wide) in paragraph at lines 304--305
 []\OT1/cmr/m/n/12 I used the built-in R func-tion \OT1/cmtt/m/n/12 lm() \OT1/cm
 r/m/n/12 to run the re-gres-sion for Ques-tion $5$, us-ing \OT1/cmtt/m/n/12 vot
 eshare
  []
 
-(./PS03_Solutions_AV.R) [10] (./PS03_Solutions_AV.aux)
+(./PS03_Solutions_AV.R) [11] [12] (./PS03_Solutions_AV.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -974,13 +975,13 @@ Package rerunfilecheck Info: File `PS03_Solutions_AV.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27374 strings out of 467525
- 475944 string characters out of 5418982
- 1158849 words of memory out of 5000000
- 55697 multiletter control sequences out of 15000+600000
+ 27377 strings out of 467525
+ 476009 string characters out of 5418982
+ 1149103 words of memory out of 5000000
+ 55698 multiletter control sequences out of 15000+600000
  639081 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,6n,104p,3249b,2221s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,6n,104p,3249b,2223s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
@@ -994,10 +995,10 @@ xlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/tex
 live/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local
 /texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/t
 exlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on PS03_Solutions_AV.pdf (10 pages, 903806 bytes).
+Output written on PS03_Solutions_AV.pdf (12 pages, 912906 bytes).
 PDF statistics:
- 246 PDF objects out of 1000 (max. 8388607)
- 198 compressed objects within 2 object streams
- 93 named destinations out of 1000 (max. 500000)
+ 255 PDF objects out of 1000 (max. 8388607)
+ 204 compressed objects within 3 object streams
+ 95 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
